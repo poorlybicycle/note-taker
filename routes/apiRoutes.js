@@ -7,6 +7,7 @@ const path = require('path');
 // })
 // };
 
+//get request for notes
 module.exports = (app) => {
   app.get('/api/notes', (req, res) => {
     fs.readFile(path.join(__dirname, '../db/db.json'),
@@ -17,8 +18,9 @@ module.exports = (app) => {
     )
   })
   app.post('/api/notes', (req, res) => {
-    console.log(req.body)
+    console.info(`${req.method} request was received to add a note`);
 
   }
   )
 };
+
